@@ -1,4 +1,4 @@
-const prisma = require('../prisma/client');
+const prisma = require('../config/prisma');
 
 module.exports = async (req, res, next) => {
   const productId = parseInt(req.params.id, 10);
