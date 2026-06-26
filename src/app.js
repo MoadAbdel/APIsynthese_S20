@@ -1,0 +1,16 @@
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+
+const authRoutes = require('./routes/auth.routes');
+const productRoutes = require('./routes/product.routes');
+
+const app = express();
+
+app.use(cors({ origin: 'http://localhost:8080' }));
+app.use(express.json());
+
+app.use('/auth', authRoutes);
+app.use('/products', productRoutes);
+
+module.exports = app;
